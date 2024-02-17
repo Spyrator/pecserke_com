@@ -59,8 +59,8 @@ pub async fn users(conn: &State<Connection>) -> RawHtml<String> {
     let mut x = match x {
         Ok(x) => x,
         Err(e) => {
-            println!("{}", e);
-            return RawHtml(format!("Fail! Couldn't get rows:/ \n{}", e));
+            println!("{:?}", e);
+            return RawHtml(format!("Fail! Couldn't get rows:/ \n{:?}", e));
         }
     };
 
