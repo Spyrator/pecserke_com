@@ -1,0 +1,10 @@
+{{ range .Events }}
+<div class="m-0 rounded-2 bg-truegray-5 min-h-md p-4">
+    <p>📌 {{ .Place }}</p>
+    <p>🕓 {{ .TimeFrom }} - {{ .TimeTo }}</p>
+    <p>💲 {{ .Price }} CZK</p>
+    <p>✅ {{ .AvailableCourts }} available courts</p>
+
+
+</div>
+{{ end }}
