@@ -4,12 +4,9 @@ mod handlers;
 
 mod auth;
 use auth::{login, user, users};
-use handlers::index::get_index;
 use libsql::Connection;
-use handlers::payme::{pay_me_amount, pay_me_amount_message, pay_me_form};
-use handlers::qr::get_qr;
+use handlers::{index::get_index, payme::{pay_me_amount, pay_me_amount_message, pay_me_form}, qr::get_qr, settings::get_settings};
 use rocket::routes;
-use handlers::settings::get_settings;
 use shuttle_secrets::SecretStore;
 
 #[shuttle_runtime::main]
