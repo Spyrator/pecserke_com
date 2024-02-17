@@ -4,8 +4,6 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-rocket = { version = "0.5.0", features = ["secrets"] }
-shuttle-rocket = "0.39.0"
 shuttle-runtime = "0.39.0"
 tokio = "1.26.0"
 qr_from_str = "*"
@@ -16,3 +14,6 @@ askama_rocket = "0.12.0"
 shuttle-turso = "0.39.0"
 shuttle-secrets = "0.39.0"
 libsql = "0.2.0"
+shuttle-axum = "0.39.0"
+axum = "0.7.4"
+serde = "1.0.196"

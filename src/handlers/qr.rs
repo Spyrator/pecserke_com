@@ -1,11 +1,10 @@
 use askama::Template;
-use rocket::get;
+use axum::response::Html;
 
 #[derive(Template)]
 #[template(path = "qr.html")]
 pub struct SettingsTemplate {}
 
-#[get("/qr")]
-pub fn get_qr() -> SettingsTemplate {
-    return SettingsTemplate {};
+pub async fn get_qr() -> Html<String> {
+    return Html(SettingsTemplate {}.to_string());
 }
