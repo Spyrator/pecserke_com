@@ -4,16 +4,18 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-shuttle-runtime = "0.39.0"
+# runtime
 tokio = "1.26.0"
-qr_from_str = "*"
-payment_strings = "0.1.1"
-iban_gen = "*"
-askama = { version = "0.12.1", features = ["with-rocket"] }
-askama_rocket = "0.12.0"
-shuttle-turso = "0.39.0"
-shuttle-secrets = "0.39.0"
-libsql = "0.2.0"
-shuttle-axum = "0.39.0"
 axum = "0.7.4"
+shuttle-runtime = "0.39.0"
+shuttle-axum = "0.39.0"
+
+# shuttle-secrets = "0.39.0"
+
+# utils
 serde = "1.0.196"
+askama = { version = "0.12.1" }
+
+# personal
+qr_from_str = "0.1.0"
+payment_strings = "0.1.1"
