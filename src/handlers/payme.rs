@@ -30,7 +30,7 @@ pub async fn pay_me_amount_message(
     return Html(svg_qr.into());
 }
 
-pub async fn pay_me_amount(Path(amount): Path<u32>) -> String {
+pub async fn pay_me_amount(Path(amount): Path<u32>) -> Html<String> {
     let payment = Payment {
         iban: "CZ8120100000002000466782".into(),
         swift: "FIOBCZPPXXX".to_owned(),
@@ -42,12 +42,12 @@ pub async fn pay_me_amount(Path(amount): Path<u32>) -> String {
     let payment_string = payment.string(&PaymentEncoding::SPD);
     let svg_qr = qr_from_str::svg(&payment_string);
 
-    return svg_qr.into();
+    return Html(svg_qr.into());
 }
 
 // FORM
 // #[post("/form", data = "<payment>")]
-pub async fn pay_me_form(Form(payment): Form<PaymentForm>) -> String {
+pub async fn pay_me_form(Form(payment): Form<PaymentForm>) -> Html<String> {
     let dpayment = Payment {
         iban: payment.iban.into(),
         swift: "".to_owned(),
@@ -59,5 +59,5 @@ pub async fn pay_me_form(Form(payment): Form<PaymentForm>) -> String {
     let payment_string = dpayment.string(&PaymentEncoding::SPD);
     let svg_qr = qr_from_str::svg(&payment_string);
 
-    return svg_qr.into();
+    return Html(svg_qr.into());
 }
