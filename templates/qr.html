@@ -1,3 +1,7 @@
+{% extends "index.html" %}
+
+{% block content %}
+
 <form class="flex flex-col md:w-1/2 gap-2 m-a" hx-post="/payme/form" hx-target="#qr">
 
     <!-- iban -->
@@ -31,3 +35,4 @@
 <div id="qr" class="m-a p-4">
     <img src="" alt="">
 </div>
+{% endblock %}

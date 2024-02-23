@@ -28,6 +28,7 @@ pub async fn pay_me_amount_message(
     let svg_qr = qr_from_str::svg(&payment_string);
 
     return Html(svg_qr.into());
+    
 }
 
 pub async fn pay_me_amount(Path(amount): Path<u32>) -> Html<String> {
